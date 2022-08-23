@@ -1,3 +1,7 @@
+<p align="center"> <img width="333" height="233" src="https://user-images.githubusercontent.com/104733166/186285439-d9463805-3354-429a-baf4-3e960826028f.gif"><p/>
+
+<br>
+
 # cURL for OSINT (Open-Source Intelligence)
 ### cURL Tool Usage for OSINT (Open-Source Intelligence)
 
@@ -18,7 +22,7 @@ The latest version of the Tool and the code is open source right here on GitHub:
 
 # What exactly does cURL do?
 I am certainly no cURL expert and it's quite difficult giving an exact explanation so I will try and give the most basic and simple explanation.
-curl means `client URL` and you already know from above that it's a command line tool, and it's basically a tool that permits/enables data transfer over many network protocols (HTTPS, HTTP, FTP, it also support SSL Certificates). The tool communicates with a web server with a URL and tells the server the data to be sent or received. 
+curl means `client URL` and you already know from above that it's a command line tool, it's basically a tool that permits/enables data transfer over many network protocols (HTTPS, HTTP, FTP, it also support SSL Certificates). The tool communicates with a web server with a URL and tells the server the data to be sent or received.(Yes you read that correctly, **the tool can do both**)
 
 # Installation
 I simply installed cURL with [Homebrew](https://formulae.brew.sh/formula/curl)
@@ -35,7 +39,8 @@ Install Command:
 <br>
 
 # Commands
-Now that you have everything installed, we are good to go ✅
+Now that you have everything installed, we are good to go ✅, so let's have a look at some commands for OSINT (Open-Source Intelligence)
+
 
 
 
