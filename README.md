@@ -23,7 +23,7 @@ The latest version of the Tool and the code is open source right here on GitHub:
 
 # What exactly does cURL do?
 I am certainly no cURL expert and it's quite difficult giving an exact explanation so I will try and give the most basic and simple explanation.
-curl means `client URL` and you already know from above that it's a command line tool, it's basically a tool that permits/enables data transfer over many network protocols (HTTPS, HTTP, FTP, it also support SSL Certificates). The tool communicates with a web server with a URL and tells the server the data to be sent or received.(Yes you read that correctly, **the tool can do both**)
+curl means `client URL` and you already know from above that it's a command line tool, it's basically a tool that permits/enables data transfer over many network protocols (HTTPS, HTTP, FTP, it also supports SSL Certificates). The tool communicates with a web server with a URL and tells the server the data to be sent or received.(Yes you read that correctly, **the tool can do both**)
 
 <br>
 
@@ -57,7 +57,7 @@ Now that you have everything installed, we are good to go ✅, so let's have a l
 
 # IP Address Information
 ### Finding your own IP
-Commands for finding the IP address of the device you are on: (type each command separate, **each command does the same thing**)
+Commands for finding the IP address of the device you are on: (type each command separately, **each command does the same thing**)
 
  ```
  curl api.ipify.org
