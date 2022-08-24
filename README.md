@@ -50,25 +50,40 @@ Install Command:
 Now that you have everything installed, we are good to go ✅, so let's have a look at some commands for OSINT (Open-Source Intelligence)
 
 <br>
+<br>
+
+<img width="233" height="133" src="https://user-images.githubusercontent.com/104733166/186291544-9cd73528-9145-4ddc-ac42-a3d604085ad0.jpg">
+
 
 # IP Address Information
 ### Finding your own IP
 Commands for finding the IP address of the device you are on: (type each command separate, **each command does the same thing**)
 
- ```curl api.ipify.org```
+ ```
+ curl api.ipify.org
+ ```
 
- ```curl ipinfo.io/ip```
+ ```
+ curl ipinfo.io/ip
+ ```
 
- ```curl ifconfig.me```
+ ```
+ curl ifconfig.me
+ ```
 
-Example below, we can see my IP 😈 :
+Example below, we can see my IP (ProtonVPN) 😈 :
 
 <img width="333" src="https://user-images.githubusercontent.com/104733166/186289031-2dbec60b-de7a-4740-9452-98c7f8b40164.png">
 
-### Get more information on your IP:
-```curl ipinfo.io/ip```
+<br>
 
+### Get more detailed information on your IP:
+```
+curl ipinfo.io
+```
+Example below, we can see that there is a lot more information on my IP:
 
+<img width="433" src="https://user-images.githubusercontent.com/104733166/186290638-42617392-581a-4639-9275-607bcab2481f.png">
 
 
 
