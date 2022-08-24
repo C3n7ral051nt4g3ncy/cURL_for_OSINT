@@ -18,11 +18,19 @@ Command line tool created in 1998 by [Daniel Stenberg](https://twitter.com/bagde
 Daniel Stenberg's website: https://daniel.haxx.se
 <br>
 The latest version of the Tool and the code is open source right here on GitHub: https://github.com/curl/curl
+
 <br>
 
 # What exactly does cURL do?
 I am certainly no cURL expert and it's quite difficult giving an exact explanation so I will try and give the most basic and simple explanation.
 curl means `client URL` and you already know from above that it's a command line tool, it's basically a tool that permits/enables data transfer over many network protocols (HTTPS, HTTP, FTP, it also support SSL Certificates). The tool communicates with a web server with a URL and tells the server the data to be sent or received.(Yes you read that correctly, **the tool can do both**)
+
+<br>
+
+# Difficulty
+cURL is fairly easy to use, and if you never opened your Terminal before, now is the time to do so. 
+
+<br>
 
 # Installation
 I simply installed cURL with [Homebrew](https://formulae.brew.sh/formula/curl)
@@ -40,6 +48,28 @@ Install Command:
 
 # Commands
 Now that you have everything installed, we are good to go ✅, so let's have a look at some commands for OSINT (Open-Source Intelligence)
+
+<br>
+
+# IP Address Information
+### Finding your own IP
+Commands for finding the IP address of the device you are on: (type each command separate, **each command does the same thing**)
+
+ ```curl api.ipify.org```
+
+ ```curl ipinfo.io/ip```
+
+ ```curl ifconfig.me```
+
+Example below, we can see my IP 😈 :
+
+<img width="333" src="https://user-images.githubusercontent.com/104733166/186289031-2dbec60b-de7a-4740-9452-98c7f8b40164.png">
+
+### Get more information on your IP:
+```curl ipinfo.io/ip```
+
+
+
 
 
 
