@@ -538,6 +538,89 @@ Below is the result in `.json` format, you can request the output file in `.txt`
 
 <br>
 
+# Various other Commands
+I learned these commands from Substack.<br>
+
+You can download sed with this command:
+
+```
+brew install gnu-sed
+```
+<br>
+
+I found the 2003 CIA World Factbook in a .txt file.<br>
+
+This is one pretty awesome command that I will use below and by using cURL combined with sed we can do a lot of interesting stuff.<br>
+SED stands for stream editor.
+
+Wikipedia Def:
+>Sed helps in operations like selecting the text, substituting text, modifying an original file, adding lines to text, or deleting lines from the text.
+
+<br>
+
+Command that will print every word in the book on a new line: <br>
+
+```
+$ curl -s https://www.gutenberg.org/files/27558/27558.txt | gsed -r 's/\s+/\n/g'
+```
+If you are on mac and downloaded `gnu-sed`, you need to use the `gsed` command and not `sed`.
+
+<br>
+
+Try this command also:
+
+```
+$ echo Tactical OSINT Analyst loves to spend time on GitHub |  gsed -r 's/\s+/\n/g'
+```
+
+<br>
+
+<img width="633" src="https://user-images.githubusercontent.com/104733166/186768753-2ff1cbc9-6858-4b1a-bdfb-e56f7c406d5b.png">
+
+<br>
+
+As you can see, each word is on a new line thanks to SED. SED is basically acting like a white space detector, meaning every time there is white space in between a word, SED will treat that as a new line.
+
+<br>
+
+Let's bring grep into the picture, let's request to have the word China on a new line every time it's in the book.
+
+<br>
+
+```
+curl -s https://www.gutenberg.org/files/27558/27558.txt | gsed -r 's/\s+/\n/g' | grep -i china
+```
+
+<br>
+
+<img width="633" src="https://user-images.githubusercontent.com/104733166/186770745-3154fd21-7f70-400e-b718-33315e3e8ab2.png">
+
+<br>
+
+This brought back so many results.<br>
+Now I would like to know how many times the word China was mentionned in the 2003 CIA World Factbook:
+
+<br>
+
+```
+$ curl -s https://www.gutenberg.org/files/27558/27558.txt | gsed -r 's/\s+/\n/g' | grep -i china | wc -l
+```
+<br>
+
+On the above command, `| wc -l` was added, meaning we can get a word count returned. <br>
+Total times the word China was mentionned in the book is: **916**
+
+<br>
+
+<img width="833" src="https://user-images.githubusercontent.com/104733166/186771768-427fbbf0-5574-4b91-8992-935bf903667d.png">
+
+
+
+
+<br>
+
+<br>
+
 <br>
 
 # cURL commands list
