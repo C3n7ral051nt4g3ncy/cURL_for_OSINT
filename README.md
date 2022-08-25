@@ -284,6 +284,20 @@ $ curl -I https://github.com
 ```
 <br>
 
+## Finding Subdomains
+Searching for `Tracelabs.org` subdomains.
+I did this simple command by looking around at how `crt.sh` works, I added `\&output\=json` at the end of the link, and as I mentionned previously, adding  `| jq --color-output` puts some nice color in the results and jq seems to act like `pprint` in python and sorts results that look much tidier. Remember also that I could have added `-o TL_results.txt` if I just wanted the results in a .txt file.
+
+<br>
+
+<img width="1145" src="https://user-images.githubusercontent.com/104733166/186715598-6ec5cb66-2bb4-4b0b-92e5-f5a439518a7a.png">
+
+<br>
+
+Results in .txt:
+
+<img width="102" src="https://user-images.githubusercontent.com/104733166/186715803-5ce6c1ab-7e96-4ddd-83ef-f79b90180427.png">
+
 ## Downloading files during the investigation
 
 Let's take this interpol PDF file as an example: https://rm.coe.int/3148-3-2-eurojust-presentation-interpol-approach-ukim-v2/1680791601
