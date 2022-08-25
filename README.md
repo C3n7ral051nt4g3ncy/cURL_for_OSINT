@@ -229,6 +229,17 @@ I really like the Spiderfoot explanation in regards to this cURL and grep comman
 
 >The curl command simply prints the HTTP response to https://www.spiderfoot.net, and the grep command contains a regular expression (regex) that finds and prints all emails within the source code. You can see that in this case, it found one, support@spiderfoot.net. A similar process could be followed to extract other information such as phone numbers, names, hostnames, etc.
 
+<br>
+
+We were born with brains that need to be used each day, please don't make the mistake or to be lazy by just copying and pasting commands, learn what you are doing and why you are doing, this is why I am taking the time to explain each command, I used to be that guy, and I would copy/paste commands that work, without understanding the commands. This means if you want to adapt or tweak the commands for something else, you would be left stranded.
+Take time to analyze a Regex string for discovering emails:
+<br>
+How is an email structured: support[1]@[2spiderfoot[3].[4]com[5]
+<br>
+
+- [1] [a-zA-Z0-9._-] The text before the @ can be lowercase a-z, uppercase A-Z, numbers 0-9, a period, underscore or hyphen
+- 
+
 
 <br>
 
