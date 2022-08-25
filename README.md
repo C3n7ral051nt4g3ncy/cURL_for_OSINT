@@ -108,7 +108,7 @@ It also works well with this command (.json format)
 ```
 $ curl ipinfo.io/json
 ```
-Below is another command to make sure we really get the .JSON and not the homepage .html
+Below is another command to make sure we really get the `JSON` and not the homepage `html`
 
 
 ```
@@ -122,7 +122,7 @@ $ curl -H "Accept: application/json" ipinfo.io
 
 Let's do more tests using Google's IP address.<br>
 
-Below are the commands when you know the IP address you are searching for, and as an example, you want to just know the **city**.
+Below are the commands when you know the IP address of the target , and as an example below, you want to know the **city**.
 
 ```
 $ curl ipinfo.io/8.8.8.8/city
