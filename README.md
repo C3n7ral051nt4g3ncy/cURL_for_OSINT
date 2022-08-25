@@ -1,4 +1,4 @@
-<p align="center"> <img width="333" height="233" src="https://user-images.githubusercontent.com/104733166/186285439-d9463805-3354-429a-baf4-3e960826028f.gif"><p/>
+<p align="center"> <img width="433" height="233" src="https://user-images.githubusercontent.com/104733166/186285439-d9463805-3354-429a-baf4-3e960826028f.gif"><p/>
 
 <br>
 
@@ -215,12 +215,19 @@ $ curl -s https://www.spiderfoot.net | grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-
 ```
 <br> 
 
-<img width="1109" alt="Screen Shot 2022-08-25 at 00 49 22" src="https://user-images.githubusercontent.com/104733166/186537612-08a532b2-3456-4dd9-bd9a-72ecebcfac69.png">
+<img width="1109" src="https://user-images.githubusercontent.com/104733166/186537612-08a532b2-3456-4dd9-bd9a-72ecebcfac69.png">
 
 <br>
 
 Great results!!! less than 2 seconds, obviously, this information isn't secret, it's open source, we could get it from a browser search, but how many seconds or minutes have we gained? 
 It's quite easy becoming a fan of using cURL+Grep and learning regex.
+
+<br>
+I really like the Spiderfoot explanation in regards to this cURL and grep command:
+
+<br>
+
+>The curl command simply prints the HTTP response to https://www.spiderfoot.net, and the grep command contains a regular expression (regex) that finds and prints all emails within the source code. You can see that in this case, it found one, support@spiderfoot.net. A similar process could be followed to extract other information such as phone numbers, names, hostnames, etc.
 
 
 <br>
@@ -318,20 +325,27 @@ The email was found in a matter of milliseconds, it didn't even reach one second
 
 <br>
 
-How about searching through domain source code for exact words or phrases?
-A lot can be found within source code, things can be intentionally hidden there, and if you compete in CTF events, this technique can help you to find something quick in the source code.
+How about searching through domain source code for exact words or phrases? 🕵🏻‍♂️ <br>
+A lot can be found within source code, things can be intentionally hidden there, and if you compete in CTF events, this technique can help you to find something quick in the source code. <br>
+
 This is a fantastic example of combining cURL and grep.
 
+I hid a quote from Mr.Robot (fsociety) in the source code, this is not visible on the website, and manually going through source code can be quite annoying and time consuming.
+
+I will use the `grep -i` command. 
+
+`grep -i` enables the command to be case insensitive. grep will search for uppercase or lowercase strings that matches the word or phrase.
+
 <br>
 
-I hid a quote from Mr.Robot (fsociety) in the source code, this is not visible if you go on the website, and manually going through source code can be quite annoying.
+Command:
 
-I will use the grep -i command. 
+```
+$ curl -L tacs-sys.com | grep -i illusion
+```
+Bingo! 
 
-
-<br>
-
-
+<img width="633" src="https://user-images.githubusercontent.com/104733166/186700428-34fe951d-7877-40e7-9f46-223ef1d13ce4.png">
 
 
 <br>
