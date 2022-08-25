@@ -316,6 +316,21 @@ The email was found in a matter of milliseconds, it didn't even reach one second
 
 <img width="697" alt="Screen Shot 2022-08-25 at 03 36 10" src="https://user-images.githubusercontent.com/104733166/186554307-2542ef70-198a-41af-bc14-8befbdb629c5.png">
 
+<br>
+
+How about searching through domain source code for exact words or phrases?
+A lot can be found within source code, things can be intentionally hidden there, and if you compete in CTF events, this technique can help you to find something quick in the source code.
+This is a fantastic example of combining cURL and grep.
+
+<br>
+
+I hid a quote from Mr.Robot (fsociety) in the source code, this is not visible if you go on the website, and manually going through source code can be quite annoying.
+
+I will use the grep -i command. 
+
+
+<br>
+
 
 
 
