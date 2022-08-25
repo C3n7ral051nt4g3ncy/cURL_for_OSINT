@@ -371,7 +371,7 @@ Fantastic and fast! here is my downloaded file as I wanted it with the name I ch
 
 Below is a command I really like 🥳, you can request a progress bar for large files that take a long time to download:
 
->Use the command `-progress-bar` or  `-#`, they both do the same thing.
+>Use the command `--progress-bar` or  `-#`, they both do the same thing.
 
 ```
 $ curl --progress-bar -o interpol.pdf https://rm.coe.int/3148-3-2-eurojust-presentation-interpol-approach-ukim-v2/1680791601
@@ -385,7 +385,7 @@ $ curl --progress-bar -o interpol.pdf https://rm.coe.int/3148-3-2-eurojust-prese
 You can also download multiple files at the same time which is awesome:
 
 ```
-$ curl -O url -O url -0 url 
+$ curl -O url -O url -O url 
 ```
 <br>
 
