@@ -444,13 +444,13 @@ Bingo!
 
 # Google UA Analytics code finder
 
-I created this one in a simple way, I know that I have Google Analytics.
-I will need to use cURL and grep.
+I created this one in a simple way, I know that I have Google Analytics.<br>
+I will need to use cURL and grep together, and these 2 make a deadly team. 💪
 
-1. I want a command that can return a Google UA code fast from any website
+1. I want a command that can return a Google UA code fast from any website I choose
 2. I want to track the progress within my terminal
-3. I don't want to have to type https.com before the domain name
-4. I will need to use grep and to create a regex string "UA\-[0-9]+", all Google Analytics codes start with UA, a hyphen after the UA, and it can only be numbers after the hyphen, so pretty easy. 
+3. I don't want to have to type `https://www.` before the domain name
+4. I will need to use grep and to create a regex string: "UA\-[0-9]+", I know that all Google Analytics codes start with UA, a hyphen after the UA, and it can only be numbers after the hyphen and never letters, so pretty easy right? 
 5. -E : Treats pattern as an extended regular expression
 6. -o : Prints only matched parts
 
@@ -458,19 +458,14 @@ I will need to use cURL and grep.
 $ curl --progress-bar -L tacs-sys.com | grep -E -o "UA\-[0-9]+"
 ```
 
-*Bare in mind that this string would work fine also: `"UA+-[0-9]+"`
+*Bare in mind that this string would work fine also which I also created and tested: `"UA+-[0-9]+"`
 
 <br>
 
 <img width="1339" src="https://user-images.githubusercontent.com/104733166/186732128-6193749c-2692-4731-b7f6-0907126bed25.png">
 <br>
 
-<br>
-
-
-You can then use a reverse analytics site to check if the UA code is on another website: https://dnslytics.com/reverse-analytics
-
-<br>
+With the UA analytics code found, you can then use a reverse analytics site to check if the UA code is linked to another site: https://dnslytics.com/reverse-analytics
 
 <br>
 
@@ -480,9 +475,7 @@ You can then use a reverse analytics site to check if the UA code is on another 
 
 <img width="66" src="https://user-images.githubusercontent.com/104733166/186503090-6a749cca-0302-4908-a197-4042a7a8aed6.png">
 
-The command we saw above for IP addresses would also work nicely for `reddit conversations`, simply add `.json` at the end of the link.
-
-<br>
+A command we saw higher up for searching for IP addresses would also work nicely for `reddit conversations`, **just add** `.json` at the end of the Reddit conversation link.
 
 <br>
 
@@ -498,18 +491,17 @@ $ curl -H "Accept: application/json" https://www.reddit.com/r/OSINT/comments/wvn
 
 <br>
 
-You can probably see that the above results look a little messy, the following command will put some color into the results and will put the .json in a tidy format, this is thanks to the `jq`  command which acts like `pprint` in Python.
+You can probably see that the above results look a little messy, the below command will put some color into the results and will put the `.json` in a tidy format, this is thanks to the `jq`  command which acts like `pprint` in Python.
+
+<br>
 
 ```
 $ curl -H "Accept: application/json" https://www.reddit.com/r/OSINT/comments/wvnko3/how_to_extract_an_email_from_a_google_maps.json | jq --color-output
 ```
-<br>
-
-You can probably see that the above results look a little messy, the following command will put some color into the results and will put the .json in a tidy format, this is thanks to the `jq`  command which acts like `pprint` in Python.
 
 <br>
 
-As you can see above, if you add  `| jq --color-output`, you get tidy .json results and some color which makes it better and easier for our eyes.
+As you can see from the command above, if you add  `| jq --color-output`, you get tidy .json results and great color which makes it a lot easier for our eyes.
 
 <br>
 
@@ -517,13 +509,21 @@ As you can see above, if you add  `| jq --color-output`, you get tidy .json resu
 
 <br>
 
-We can see the `unix timestamp`on the photo, it's then easy to convert this into a date and time there is loads of online converters.
+We can see the `unix timestamp` on the photo, it's then quite easy to convert this into a date and time as there is many of online converters.
+
+<br>
+
 
 ## What if you want all the information in a file?
-Maybe you want all the information to keep for your investigation in a file. simply add the -o command meaning output and the file name you desire.
+Maybe you want all the information for your investigation in a file.<br>
+Simply add the `-o` command, meaning `output`, and add the file name you choose.
+
 <br>
-Command Example for the reddit post to get the information output in a file: 📁
+
+Command Example for the reddit post to get the information output into a file: 📁
+
 <br>
+
 ```
 $ curl -H "Accept: application/json" https://www.reddit.com/r/OSINT/comments/wvnko3/how_to_extract_an_email_from_a_google_maps.json -o reddit.json
 ```
@@ -540,7 +540,7 @@ Below is the result in `.json` format, you can request the output file in `.txt`
 
 <br>
 
-# cURL commands liust
+# cURL commands list
 
 Cheat sheet by [Daniel Stenberg (Haxx)](https://daniel.haxx.se/)
 
