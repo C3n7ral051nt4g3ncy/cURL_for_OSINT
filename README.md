@@ -369,7 +369,7 @@ Fantastic and fast! here is my downloaded file as I wanted it with the name I ch
 <br>
 
 
-Below is a command I really like 🥳, you can request a progress car for large files that take a long time to download:
+Below is a command I really like 🥳, you can request a progress bar for large files that take a long time to download:
 
 >Use the command `-progress-bar` or  `-#`, they both do the same thing.
 
