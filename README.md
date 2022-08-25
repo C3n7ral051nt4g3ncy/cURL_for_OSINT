@@ -170,7 +170,7 @@ Perfect results: 👍
 
 <br>
 
-I will add my personal touch to this command, with some added color, the color doesn't show as a big difference with these results, but wait until you see how it works further-on below with messy results and how the `jq` command can really make a difference.
+I will add my personal touch to this command, with some added color, the color doesn't show as a big difference with these results, but wait until you see how it works further on below with messy results and how the `jq` command can really make a difference.
 
 
 <br>
@@ -191,9 +191,12 @@ I really like this command below:
 ```
 curl -s http://ip-api.com/json/[input Domain or IP address] | jq -r .as
 ```
-So with this API you can input either a domain or an IP address, the following commands are jq which we have talkes about, -r means range so you can use -r or --range and at the end you can use .org or .isp or .city or .country or .RegionName or .as
 
-Let's try this one:
+With this API you can input either a `domain` or an `IP address`, the commands after the IP or domain are `jq` which we will talk about further on below, and `-r` which means range, you can use `-r` or `--range`,  and depending on the information you require about the domain, you can put: .org or .isp or .city or .country or .RegionName or .as. 
+
+`-s` just means silent (hiding progress)
+
+Let's try this command:
 
 ```
 $ curl -s http://ip-api.com/json/visitiran.ir | jq -r .city
@@ -201,7 +204,7 @@ $ curl -s http://ip-api.com/json/visitiran.ir | jq -r .city
 <br>
 
 <img width="533" src="https://user-images.githubusercontent.com/104733166/186725342-ec8d06ff-765a-4c6e-a17b-7f4662377b57.png">
-We can see the city is: `Tehran` for the domain we tested with.
+We can see the city is: `Tehran` for the domain we tested on.
 
 <br>
 
@@ -217,12 +220,14 @@ We can see the city is: `Tehran` for the domain we tested with.
 Grep Website: https://www.gnu.org/software/grep/manual/grep.html
 
 ### What is Grep?
-grep prints lines that contain a match for one or more patterns | Regex (Regular Expressions)
-Why is it called grep: g/re/p: **globally search for a regular expression and print matching lines**
+grep prints lines that contain a match for one or more patterns | Regex (Regular Expressions) <br>
+Why is it called grep?:
+
+g/re/p: **globally search for a regular expression and print matching lines**
 
 <br>
 
-This is not my work, a fantastic email scraper with a cURL command, Grep + regex
+This is not my work, this is a fantastic email scraper with a cURL command, grep + regex string. <br>
 It was shared by [@Spiderfoot](https://twitter.com/spiderfoot): 
 
 ```
@@ -240,35 +245,39 @@ $ curl -s https://www.spiderfoot.net | grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-
 
 <br>
 
-Great results!!! less than 2 seconds, obviously, this information isn't secret, it's open source, we could get it from a browser search, but how many seconds or minutes have we gained? 
-It's quite easy becoming a fan of using cURL+Grep and learning regex.
+Great result!!! I timed it, it took less than 2 seconds.<br> 
+It's quite easy becoming a fan of using cURL+Grep and learning about regex (regular expressions) 
 
 <br>
-I really like the Spiderfoot explanation in regards to this cURL and grep command:
+
+I enjoyed reading the Spiderfoot explanation in regards to this cURL + grep command:
 
 <br>
+
 
 >The curl command simply prints the HTTP response to https://www.spiderfoot.net, and the grep command contains a regular expression (regex) that finds and prints all emails within the source code. You can see that in this case, it found one, support@spiderfoot.net. A similar process could be followed to extract other information such as phone numbers, names, hostnames, etc.
 
 <br>
 
-We were born with brains that need to be used each day, please don't make the mistake or to be lazy by just copying and pasting commands, learn what you are doing and why you are doing, this is why I am taking the time to explain each command, I used to be that guy, and I would copy/paste commands that work, without understanding the commands. This means if you want to adapt or tweak the commands for something else, you would be left stranded.
-Take time to analyze another Regex string that works for discovering emails:
+Let's take a minute to analyze another Regex string that works for discovering emails:
+
 <br>
-How is an email structured: support[1]@[2]spiderfoot[3].[4]com[5]
+
+How an email is structured: support[1]@[2]spiderfoot[3].[4]com[5]
+
 <br>
 
 `[a-zA-Z0-9._-]\+@[a-zA-Z]\+.[a-zA-Z]\+`
 
-- [1] [a-zA-Z0-9._-] The text before the @ can be lowercase a-z, uppercase A-Z, numbers 0-9, a period, underscore or hyphen
+- [1] [a-zA-Z0-9._-] The text/username before the @ can be lowercase a-z, uppercase A-Z, numbers 0-9, a period, underscore or hyphen
 - [2] [\+@] Obviously, this can only be an @ sign, `\+` this just means we want to combine the pattern without breaking it
-- [3] [a-zA-Z] Same as number 1, we can see here this regex string has not included numbers, you could have numbers in a domain name so I prefer the string o spiderfoot.
-- [4] [\+.] Obviously we know there is always a period before a `com` or `net` or `org` or `us` or `gov`, whatever ;-)
-- [5] [a-zA-Z] letter for com or whatever else.
+- [3] [a-zA-Z] Same as number 1, we can see here that this regex string does not include numbers, you could have numbers in a domain name, I prefer the string of Spiderfoot.
+- [4] [\+.] We know there is always a period/dot `.` before a `com` or `net` or `org` or `us` or `gov`, whatever 🤓
+- [5] [a-zA-Z] Lowercase or Uppercase letter for com or net/org/us/io/gov/app/it (as above).
 
 <br>
 
-I haven't talked about the -s command that Spiderfoot used, it just means silent, and you can do -s or --silent to implement it, it does not show the progress meter or error messages but will still output the data ✔️
+Remember also that the `-s` command that Spiderfoot used means silent, and you can do `-s` or `--silent` to implement it, it does not show the progress meter or error messages but will still output the data ✔️
 
 <br>
 
@@ -283,10 +292,11 @@ I haven't talked about the -s command that Spiderfoot used, it just means silent
 ```
 $ curl https://www.domain.com
 ```
-This is the most basic of commands for beginners and will show the full response of the web server hosting the domain, it's long and messy but can be very useful.
-*Notice that I put `https://www.` in front of the domain name, if I don't, I don't get a correst response, and the response is that the document has moved permanently.
+Above, this is the most basic of commands for beginners and will show the full response of the web server hosting that domain, the information returned is long and messy but can be very useful.
 
-You can avoid typing `https://www.` and can avoid the response of permanent move with this command:
+*Notice that I put `https://www.` in front of the domain name, if I don't, I won't get a correct response, the response will be that the document has moved permanently.
+
+You can avoid typing `https://www.` and can avoid the response of a `permanent move` with this command:
 
 ```
 $ curl -L github.com
@@ -295,13 +305,13 @@ $ curl -L github.com
 
 <br>
 
-View Headers Response with the `--head` command
+View Headers Response with the `--head` command:
 
 ```
 $ curl --head https://github.com
 ```
-or 
 
+or 
 
 ```
 $ curl -I https://github.com
@@ -310,7 +320,17 @@ $ curl -I https://github.com
 
 ## Finding Subdomains
 Searching for `Tracelabs.org` subdomains.
-I did this simple command by looking around at how `crt.sh` works, I added `\&output\=json` at the end of the link, and as I mentionned previously, adding  `| jq --color-output` puts some nice color in the results and jq seems to act like `pprint` in python and sorts results that look much tidier. Remember also that I could have added `-o TL_results.txt` if I just wanted the results in a .txt file.
+
+I did this simple command by looking around at how `crt.sh` works:
+
+```
+$ curl -s https://crt.sh/?q=tracelabs.org&output=json | jd --color-output
+```
+
+
+I added `\&output\=json` at the end of the link, and as I mentionned previously, adding  `| jq --color-output` puts some nice color in the results and `jq` seems to act like `pprint` in python and sorts results, making them look much neater. 
+
+I could also have added `-o TL_results.txt` if I just wanted the results in a .txt file, and the `-o` command lets us choose the name of the file and format of the file.
 
 <br>
 
@@ -322,9 +342,15 @@ Results in .txt:
 
 <img width="102" src="https://user-images.githubusercontent.com/104733166/186715803-5ce6c1ab-7e96-4ddd-83ef-f79b90180427.png">
 
-## Downloading files during the investigation
+<br>
 
-Let's take this interpol PDF file as an example: https://rm.coe.int/3148-3-2-eurojust-presentation-interpol-approach-ukim-v2/1680791601
+<br>
+
+
+
+# Downloading files during the investigation
+
+Let's take this Interpol PDF file as an example that I found with some Dorking: https://rm.coe.int/3148-3-2-eurojust-presentation-interpol-approach-ukim-v2/1680791601
 
 - -o will save your file as you name it, meaning you need to choose a name
 - -O will save the file as it was called on the server
@@ -336,13 +362,16 @@ $ curl -o interpol.pdf https://rm.coe.int/3148-3-2-eurojust-presentation-interpo
 ```
 $ curl -O https://rm.coe.int/3148-3-2-eurojust-presentation-interpol-approach-ukim-v2/1680791601
 ```
-Fantastic and fast, here is my downloaded file as I wanted it:
+Fantastic and fast! here is my downloaded file as I wanted it with the name I chose:
 
 <img width="151" src="https://user-images.githubusercontent.com/104733166/186547270-fe5164ba-4ff6-4a56-86a9-28a010a90883.png">
 
-This is a command I really like, you can request a progress car for large files.
+<br>
 
-Use the command --progress-bar or -#, they both do the same thing.
+
+Below is a command I really like 🥳, you can request a progress car for large files that take a long time to download:
+
+>Use the command `-progress-bar` or  `-#`, they both do the same thing.
 
 ```
 $ curl --progress-bar -o interpol.pdf https://rm.coe.int/3148-3-2-eurojust-presentation-interpol-approach-ukim-v2/1680791601
@@ -360,35 +389,43 @@ $ curl -O url -O url -0 url
 ```
 <br>
 
-I found this interpol file with some dorking and it was downloaded using cURL, how about finding some emails on it without even opening the file?
-We have worked with cURL and grep for this tutorial, but for this one out goes cURL and in comes grep! :-)
+We downloaded the file using cURL, how about finding emails on it without even opening the file?
 
-let's use this command to see if the interpol file has some email on it:
+cURL and grep are great working together, but for this one, OUT goes cURL and IN comes grep! 👊
+
+<br>
+
+<br>
+
+Let's use the below command to see if the interpol file has some emails on it:
 
 ```
 $ grep -a -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b" interpol.pdf
 ```
+
 I put the `-a` command to force grep to treat the binary file as text, if I don't put it there I keep getting `Binary File matches`, without an email being printed.
 
 - `-E`= extended regular expression (regex)
 - `-o`= only matching | Meaning in this case Printing email addresses only
 
-The email was found in a matter of milliseconds, it didn't even reach one second, the PDF is over 20 pages and the email is on the last page so it would have taken much longer to find it, this proves how useful cURL and grep are.
+>The email was found in a matter of milliseconds, it didn't even reach 1 sec, the PDF is over 20 pages and the email is on the last page so it would have taken much longer to find it, this proves how useful cURL and grep are.
+
+<br>
 
 <img width="697" alt="Screen Shot 2022-08-25 at 03 36 10" src="https://user-images.githubusercontent.com/104733166/186554307-2542ef70-198a-41af-bc14-8befbdb629c5.png">
 
 <br>
 
 How about searching through domain source code for exact words or phrases? 🕵🏻‍♂️ <br>
-A lot can be found within source code, things can be intentionally hidden there, and if you compete in CTF events, this technique can help you to find something quick in the source code. <br>
+A lot can be found within source code, things can be intentionally hidden there, and if you compete in CTF events, the below command can help you to find something quick within the source code. <br>
 
-This is a fantastic example of combining cURL and grep.
+>This is a fantastic example of combining cURL and grep:
 
 I hid a quote from Mr.Robot (fsociety) in the source code, this is not visible on the website, and manually going through source code can be quite annoying and time consuming.
 
-I will use the `grep -i` command. 
+Let's use the `grep -i` command. 
 
-`grep -i` enables the command to be case insensitive. grep will search for uppercase or lowercase strings that matches the word or phrase.
+`grep -i` enables the command to be case insensitive, meaning grep will search for uppercase or lowercase strings that matches the word or phrase.
 
 <br>
 
