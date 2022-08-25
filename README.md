@@ -232,13 +232,18 @@ I really like the Spiderfoot explanation in regards to this cURL and grep comman
 <br>
 
 We were born with brains that need to be used each day, please don't make the mistake or to be lazy by just copying and pasting commands, learn what you are doing and why you are doing, this is why I am taking the time to explain each command, I used to be that guy, and I would copy/paste commands that work, without understanding the commands. This means if you want to adapt or tweak the commands for something else, you would be left stranded.
-Take time to analyze a Regex string for discovering emails:
+Take time to analyze another Regex string that works for discovering emails:
 <br>
-How is an email structured: support[1]@[2spiderfoot[3].[4]com[5]
+How is an email structured: support[1]@[2]spiderfoot[3].[4]com[5]
 <br>
 
+`[a-zA-Z0-9._-]\+@[a-zA-Z]\+.[a-zA-Z]\+`
+
 - [1] [a-zA-Z0-9._-] The text before the @ can be lowercase a-z, uppercase A-Z, numbers 0-9, a period, underscore or hyphen
-- 
+- [2] [\+@] Obviously, this can only be an @ sign, `\+` this just means we want to combine the pattern without breaking it
+- [3] [a-zA-Z] Same as number 1, we can see here this regex string has not included numbers, you could have numbers in a domain name so I prefer the string o spiderfoot.
+- [4] [\+.] Obviously we know there is always a period before a `com` or `net` or `org` or `us` or `gov`, whatever ;-)
+- [5] [a-zA-Z] letter for com or whatever else.
 
 
 <br>
