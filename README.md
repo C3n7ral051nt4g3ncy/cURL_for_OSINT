@@ -2,8 +2,8 @@
 
 <br>
 
-# cURL for OSINT (Open-Source Intelligence)
-### cURL Tool Usage for OSINT (Open-Source Intelligence)
+# cURL for OSINT
+### cURL Tool usage (with grep) for OSINT (Open-Source Intelligence)
 
 <br>
 
@@ -13,7 +13,7 @@
 <br>
 
 # Background Information
-Command line tool created in 1998 by [Daniel Stenberg](https://twitter.com/bagder), a Swedish Developper/Programmer.
+cURL is a command line tool created in 1998 by [Daniel Stenberg](https://twitter.com/bagder), a Swedish Developper/Programmer.
 <br>
 Daniel Stenberg's website: https://daniel.haxx.se
 <br>
@@ -22,8 +22,8 @@ The latest version of the Tool and the code is open source right here on GitHub:
 <br>
 
 # What exactly does cURL do?
-I am certainly no cURL expert and it's quite difficult giving an exact explanation so I will try and give the most basic and simple explanation.
-curl means `client URL` and you already know from above that it's a command line tool, it's basically a tool that permits/enables data transfer over many network protocols (HTTPS, HTTP, FTP, it also supports SSL Certificates). The tool communicates with a web server with a URL and tells the server the data to be sent or received.(Yes you read that correctly, **the tool can do both**)
+I am not a cURL expert and it's quite difficult giving an exact explanation so I will try and give the most basic and simple explanation.
+cURL means `Client URL` and you already know from above that it's a command line tool, so it's basically a tool that permits/enables data transfer over many network protocols (HTTPS, HTTP, FTP, it also supports SSL Certificates). The tool communicates with a web server with a URL and tells the server the data to be sent or received. (yes you read that correctly, **the tool can do both** 🤓)
 
 <br>
 
@@ -47,7 +47,7 @@ Install Command:
 <br>
 
 # Commands
-Now that you have everything installed, we are good to go ✅, so let's have a look at some commands for OSINT (Open-Source Intelligence)
+Now that you have everything installed, we are good to go ✅, so let's have a look at some commands for OSINT (Open-Source Intelligence).
 <br>
 <br>
 <br>
@@ -95,7 +95,7 @@ Example below, we can see my IP (ProtonVPN) 😈 :
 
 <br>
 
-### CGet more detailed information on your IP:
+### Get more detailed information on your IP:
 ```
 $ curl ipinfo.io
 ```
@@ -103,12 +103,12 @@ Example below, we can see that there is a lot more information on my IP such as 
 
 <img width="433" src="https://user-images.githubusercontent.com/104733166/186290638-42617392-581a-4639-9275-607bcab2481f.png">
 
-It works also with this command (.json format)
+It also works well with this command (.json format)
 
 ```
 $ curl ipinfo.io/json
 ```
-There is another command to make sure we really get JSON and not the homepage html
+Below is another command to make sure we really get the .JSON and not the homepage .html
 
 
 ```
@@ -122,7 +122,7 @@ $ curl -H "Accept: application/json" ipinfo.io
 
 Let's do more tests using Google's IP address.<br>
 
-Below are the commands when you know the IP address you are searching for, you want to know jut the city.
+Below are the commands when you know the IP address you are searching for, and as an example, you want to just know the **city**.
 
 ```
 $ curl ipinfo.io/8.8.8.8/city
@@ -132,13 +132,13 @@ Results:
 <img width="366" src="https://user-images.githubusercontent.com/104733166/186506023-a37ef2d1-fae7-47e7-a732-bc5b999ef898.png">
 <br>
 
-Get the country:
+Get the **Country**:
 ```
 $ curl ipinfo.io/8.8.8.8/country
 ```
 <br>
 
-Get the Organization:
+Get the **Organization**:
 ```
 $ curl ipinfo.io/8.8.8.8/org
 ```
@@ -152,7 +152,7 @@ $ curl ipinfo.io/8.8.8.8/org
 
 <img width="133" src="https://user-images.githubusercontent.com/104733166/186533300-4d97e784-00e1-4b0b-8f84-2f40abf6cb9f.png">
 
-I particularly like this easy command to get Whois information, this is the work of [Sector035](https://sector035.nl) and was shared on an article called [dial cURL for Content on OSINTCuriou.us](https://osintcurio.us/2019/06/25/dial-curl-for-content/)
+I particularly like this easy command to get Whois information, this is not my work, it's the work of [Sector035](https://sector035.nl) and was shared on an article called [dial cURL for Content on OSINTCuriou.us](https://osintcurio.us/2019/06/25/dial-curl-for-content/)
 
 ```
 $ curl cli.fyi/inputdomainhere
@@ -164,12 +164,13 @@ Let's test with the website of the French Presidential Palace:
 ```
 $ curl cli.fyi/elysee.fr
 ```
-Perfect results:
+Perfect results: 👍
 
 <img width="633" src="https://user-images.githubusercontent.com/104733166/186533013-2716e467-0e82-4fb9-87bc-003cd0a355d1.png">
 
 <br>
-I will add a personal touch to the command, with some color, it isn't a big difference with these results, but wait until you see how it works further below with messy results and how the jq command can really make a difference.
+
+I will add my personal touch to this command, with some added color, the color doesn't show as a big difference with these results, but wait until you see how it works further-on below with messy results and how the `jq` command can really make a difference.
 
 
 <br>
@@ -181,6 +182,26 @@ $ curl cli.fyi/elysee.fr | jq --color-output
 <br>
 
 <img width="333" alt="Screen Shot 2022-08-25 at 00 20 53" src="https://user-images.githubusercontent.com/104733166/186533988-ea8abfd2-9546-4138-b016-8f75761cfba8.png">
+
+<br>
+
+I really like this command below:
+<br>
+
+```
+curl -s http://ip-api.com/json/[input Domain or IP address] | jq -r .as
+```
+So with this API you can input either a domain or an IP address, the following commands are jq which we have talkes about, -r means range so you can use -r or --range and at the end you can use .org or .isp or .city or .country or .RegionName or .as
+
+Let's try this one:
+
+```
+$ curl -s http://ip-api.com/json/visitiran.ir | jq -r .city
+```
+<br>
+
+<img width="533" src="https://user-images.githubusercontent.com/104733166/186725342-ec8d06ff-765a-4c6e-a17b-7f4662377b57.png">
+We can see the city is: `Tehran` for the domain we tested with.
 
 <br>
 
@@ -245,6 +266,9 @@ How is an email structured: support[1]@[2]spiderfoot[3].[4]com[5]
 - [4] [\+.] Obviously we know there is always a period before a `com` or `net` or `org` or `us` or `gov`, whatever ;-)
 - [5] [a-zA-Z] letter for com or whatever else.
 
+<br>
+
+I haven't talked about the -s command that Spiderfoot used, it just means silent, and you can do -s or --silent to implement it, it does not show the progress meter or error messages but will still output the data ✔️
 
 <br>
 
@@ -377,6 +401,37 @@ Bingo!
 
 <img width="633" src="https://user-images.githubusercontent.com/104733166/186700428-34fe951d-7877-40e7-9f46-223ef1d13ce4.png">
 
+<br>
+
+<br>
+
+# Google UA Analytics code finder
+
+I created this one in a simple way, I know that I have Google Analytics.
+I will need to use cURL and grep.
+
+1. I want a command that can return a Google UA code fast from any website
+2. I want to track the progress within my terminal
+3. I don't want to have to type https.com before the domain name
+4. I will need to use grep and to create a regex string "UA\-[0-9]+", all Google Analytics codes start with UA, a hyphen after the UA, and it can only be numbers after the hyphen, so pretty easy. 
+5. -E : Treats pattern as an extended regular expression
+6. -o : Prints only matched parts
+
+```
+$ curl --progress-bar -L tacs-sys.com | grep -E -o "UA\-[0-9]+"
+```
+
+*Bare in mind that this string would work fine also: `"UA+-[0-9]+"`
+
+<br>
+
+<img width="1339" src="https://user-images.githubusercontent.com/104733166/186732128-6193749c-2692-4731-b7f6-0907126bed25.png">
+<br>
+
+<br>
+
+
+You can then use a reverse analytics site to check if the UA code is on another website: https://dnslytics.com/reverse-analytics
 
 <br>
 
@@ -442,4 +497,54 @@ Below is the result in `.json` format, you can request the output file in `.txt`
 
 <img width="797" src="https://user-images.githubusercontent.com/104733166/186527850-5a75a828-fc16-4771-9742-475ffe233c9e.png">
 
+<br>
 
+<br>
+
+<br>
+
+# cURL commands liust
+
+Cheat sheet by [Daniel Stenberg (Haxx)](https://daniel.haxx.se/)
+
+
+![cURL Cheat Sheet](https://user-images.githubusercontent.com/104733166/186732535-1fcbf63c-a984-435b-9b52-5112ad45f611.png)
+
+<br>
+
+<br>
+
+<br>
+
+
+# grep commands list
+
+
+| Command | Or                    | Interpretation                               |
+| --------|:---------------------:| --------------------------------------------:|
+| -E      | --extended-regexp     | Extended Regular Expressions (Regex).        |
+| --help  | --help                | Print a usage message                        |
+| -V      | --version             | Print the version number of grep             |
+| -e      | --regexp=patterns     | Use patterns for Matching                    |
+| -a      | --text                | Process a binary file as if it were text     |
+| -f      | --file=FILE           | Get patterns from FILE                       |
+| -o      | --only-matching       | Print only matched parts of matching lines   |
+| -r      | --recursive           | process files in directory, recursively.     |
+| -F      | --fixed-strings       | Interpret patterns as fixed strings.         |
+| -i      | --ignore-case         | Ignore case distinctions in patterns.        |
+| -w      | --word-regexp         | Lines containing matches for whole words.    |
+| -x      | --line-regexp         | Matches exacrlt the whole lines              |
+| -c      | --count               | Print count of selected lines per file       |
+| -s      | --no-messages         | Suppress error messages                      |
+| -q      | --silent              | Quiet, do not write anything to output       |
+| -G      | --basic-regexp        | patterns as basic regular expressions        |
+| -v      | --invert-match        | Invert sense of matching (non matching lines)|
+| -m      | --max-count=NUM       | Stop after the first num selected lines      |
+| -n      | --line-number         | Print line number with output lines          |
+| -H      | --with-filename       | Print file name with output lines            |
+| -L      | --files-without-match | Print names of files with no selected lines  |
+| -l      | --files-with-match    | Print names of files with selected lines     |
+
+<br>
+
+More information: https://www.gnu.org/software/grep/manual/grep.html
