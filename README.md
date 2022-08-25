@@ -221,9 +221,9 @@ Grep Website: https://www.gnu.org/software/grep/manual/grep.html
 
 ### What is Grep?
 grep prints lines that contain a match for one or more patterns | Regex (Regular Expressions) <br>
-Why is it called grep?:
 
-g/re/p: **globally search for a regular expression and print matching lines**
+Why is it called grep?: 
+- g/re/p: **globally search for a regular expression and print matching lines**
 
 <br>
 
@@ -246,11 +246,11 @@ $ curl -s https://www.spiderfoot.net | grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-
 <br>
 
 Great result!!! I timed it, it took less than 2 seconds.<br> 
-It's quite easy becoming a fan of using cURL+Grep and learning about regex (regular expressions) 
+It's quite easy becoming a fan of using cURL and Grep and learning about regex (regular expressions) 
 
 <br>
 
-I enjoyed reading the Spiderfoot explanation in regards to this cURL + grep command:
+I enjoyed reading the Spiderfoot explanation below in regards to this cURL + grep command:
 
 <br>
 
@@ -458,7 +458,7 @@ I will need to use cURL and grep together, and these 2 make a deadly team. 💪
 $ curl --progress-bar -L tacs-sys.com | grep -E -o "UA\-[0-9]+"
 ```
 
-*Bare in mind that this string would work fine also which I also created and tested: `"UA+-[0-9]+"`
+*Keep in mind that this string I created would work fine too: `"UA+-[0-9]+"`
 
 <br>
 
@@ -491,7 +491,7 @@ $ curl -H "Accept: application/json" https://www.reddit.com/r/OSINT/comments/wvn
 
 <br>
 
-You can probably see that the above results look a little messy, the below command will put some color into the results and will put the `.json` in a tidy format, this is thanks to the `jq`  command which acts like `pprint` in Python.
+You can probably see that the above results look a little messy, the below command will put some color into the results and will put the `json` in a tidy format, this is thanks to the `jq`  command which acts like `pprint` in Python.
 
 <br>
 
@@ -501,7 +501,7 @@ $ curl -H "Accept: application/json" https://www.reddit.com/r/OSINT/comments/wvn
 
 <br>
 
-As you can see from the command above, if you add  `| jq --color-output`, you get tidy .json results and great color which makes it a lot easier for our eyes.
+As you can see from the command above, if you add  `| jq --color-output`, you get tidy results and great color which makes it a lot easier for our eyes.
 
 <br>
 
@@ -509,7 +509,7 @@ As you can see from the command above, if you add  `| jq --color-output`, you ge
 
 <br>
 
-We can see the `unix timestamp` on the photo, it's then quite easy to convert this into a date and time as there is many of online converters.
+We can see the `unix timestamp` on the photo, it's then quite easy to convert this into a date and time as there is many free online converters.
 
 <br>
 
