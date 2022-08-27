@@ -210,8 +210,29 @@ We can see the city is: `Tehran` for the domain we tested on.
 
 <br>
 
+
+# Whois History
+
+There are many sites you can get a `Free API Key` from.<br>
+One site I like is [whoisfreaks](https://whoisfreaks.com), just head over and join and you will get your API Key with 100 API calls.
+
+This is a command for historical whois information:
+
 <br>
 
+```
+$ curl -s  https://api.whoisfreaks.com/v1.0/whois\?apiKey\=API_Key_here\&whois\=historical\&domainName\=cnn.com | jq --color-output
+```
+
+Don't forget that you can also use `grep` if you just want to see email addresses and not the full information.
+
+<br>
+
+<img width="1233"  src="https://user-images.githubusercontent.com/104733166/187009377-9a3fff5b-fd0d-4e4b-845b-22be2b175f8a.png">
+
+<br>
+
+<br>
 
 # Getting an email from a Domain with cURL + Grep
 
