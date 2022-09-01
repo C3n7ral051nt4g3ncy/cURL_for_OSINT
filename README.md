@@ -28,7 +28,7 @@ cURL means `Client URL` and you already know from above that it's a command line
 <br>
 
 # Difficulty
-cURL is fairly easy to use, and if you never opened your Terminal before, now is the time to do so. 
+cURL is fairly easy to use, and if you have never opened your Terminal before, now is the time to do so 🤩.
 
 <br>
 
