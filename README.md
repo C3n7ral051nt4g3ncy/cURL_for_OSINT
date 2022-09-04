@@ -22,7 +22,7 @@ The latest version of the Tool and the code is open source right here on GitHub:
 <br>
 
 # What exactly does cURL do?
-I am not a cURL expert and it's quite difficult giving an exact explanation so I will try and give the most basic and simple explanation.
+I am not a cURL expert and it's quite difficult giving an exact explanation so I will try and give the most basic explanation.
 cURL means `Client URL` and you already know from above that it's a command line tool, so it's basically a tool that permits/enables data transfer over many network protocols (HTTPS, HTTP, FTP, it also supports SSL Certificates). The tool communicates with a web server with a URL and tells the server the data to be sent or received. (yes you read that correctly, **the tool can do both** 🤓)
 
 <br>
