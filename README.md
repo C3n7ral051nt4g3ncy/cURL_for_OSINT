@@ -3,7 +3,7 @@
 <br>
 
 # cURL for OSINT
-### cURL Tool usage (with grep) for OSINT (Open-Source Intelligence)
+### cURL Tool usage (with Grep) for OSINT (Open-Source Intelligence)
 
 <br>
 
