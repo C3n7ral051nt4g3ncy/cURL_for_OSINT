@@ -81,7 +81,7 @@ Commands to get your IPV4 and IPV6 addresses:
  ```
 
  ```
- $ curl -4 icanhazip.com
+ $ curl -6 icanhazip.com
  ```
  
  <br>
